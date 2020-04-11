@@ -14,7 +14,3 @@ CREATE TABLE IF NOT EXISTS shopping_list (
   checked BOOLEAN DEFAULT false NOT NULL,
   category grocery NOT NULL
 );
-
--- SELECT name, price, category
---   FROM shopping_list
--- WHERE name LIKE '%cheese%';

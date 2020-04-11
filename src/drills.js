@@ -48,7 +48,17 @@ itemsAddedAfterDate(20)
 
 function costPerCategory() {
   knexInstance
-    .select('name', 'price', 'category', 'checked', 'date_added')
+    .select('category')
     .from('shopping_list')
-    .groupBy('category', 'price')
+    .sum('price')
+    .groupBy('category')
+    .then(result => {
+      console.log(result)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  
 }
+
+costPerCategory()
